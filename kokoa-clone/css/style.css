@@ -9,8 +9,10 @@
 
 /* Screens */
 @import "screens/login.css";
+@import "screens/friends.css";
 
 body {
   font-family: "Open Sans", sans-serif;
   padding-top: 20px;
+  color: #2e363e;
 }
