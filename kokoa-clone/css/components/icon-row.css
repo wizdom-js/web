@@ -1,0 +1,29 @@
+.icon-row__column {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  margin: 0px 15px;
+}
+
+.twice_column {
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
+.twice_column div:nth-child(2) {
+  padding-left: 147px;
+}
+
+.icon-row__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-row__icon i {
+  font-size: 35px;
+}
+
+.icon-row__icon span {
+  margin-top: 18px;
+}
