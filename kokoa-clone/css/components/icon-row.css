@@ -4,14 +4,13 @@
   padding-bottom: 25px;
   margin: 0px 15px;
 }
-
 .twice_column {
   justify-content: flex-start;
   margin-top: 40px;
 }
 
 .twice_column div:nth-child(2) {
-  padding-left: 147px;
+  padding-left: 145px;
 }
 
 .icon-row__icon {
@@ -26,4 +25,11 @@
 
 .icon-row__icon span {
   margin-top: 18px;
+}
+.find-icon {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0px 15px;
+  padding-bottom: 25px;
 }
