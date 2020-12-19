@@ -10,9 +10,6 @@
   width: 42%;
 }
 
-.twice_column div:nth-child(2) {
-}
-
 .icon-row__icon {
   display: flex;
   flex-direction: column;

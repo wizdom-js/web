@@ -1,5 +1,4 @@
-#no-mobile,
-#no-landscape {
+#no-mobile {
   position: absolute;
   z-index: 99;
   height: 100vh;
@@ -15,11 +14,6 @@
 
 @media screen and (max-width: 645px) {
   #no-mobile {
-    display: none;
-  }
-}
-@media screen and (display-mode: browser) and (orientation: portrait) {
-  #no-landscape {
     display: none;
   }
 }
