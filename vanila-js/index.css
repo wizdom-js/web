@@ -1,3 +1,13 @@
 body {
   background-color: thistle;
 }
+h1 {
+  color: #34495e;
+}
+.btn {
+  cursor: pointer;
+}
+
+.clicked {
+  color: #7f9c9d;
+}

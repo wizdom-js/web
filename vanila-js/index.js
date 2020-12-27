@@ -1,37 +1,31 @@
 const title = document.querySelector("#title");
 
-// 색깔값 지정해주기 (대문자로 선언 많이 함)
-const BASE_COLOR = "rgb(52, 73, 94)";
-const OTHER_COLOR = "#7f8c8d";
+// 클래스 이름 지정해주기
+const CLICKED_CLASS = "clicked";
 
 function handleClick() {
-  const currentColor = title.style.color;
-  // 만약 현재 색깔이 기본색과 같다면 ~
-  // 이 조건문은 처음엔 무조건 참이다. 밑의 init에서 설정해줬으니까
-  // 근데 또 클릭하면 csurrentCOlor는 BASE_COLOR와 동일하지 않게됨
-  if (currentColor === BASE_COLOR) {
-    title.style.color = OTHER_COLOR;
+  // value값 가져오기
+  // class list에 clicked있으면 true 줄거고 없으면 false 줌
+  const hasClass = title.classList.contains(CLICKED_CLASS);
+  if (!hasClass) {
+    //CLICKED_CLASS가 클래스 리스트에 있지 않다면 같지 않다면 추가해준다.
+    // 값 세팅
+    title.classList.add(CLICKED_CLASS);
   } else {
-    title.style.color = BASE_COLOR;
+    // CLICKED_CLASS 있으면 없애주기
+    title.classList.remove(CLICKED_CLASS);
   }
 }
 
+// toggle로 위의 조건문식 완전 간단하게 하기
+// function handleClick() {
+//   title.classList.toggle(CLICKED_CLASS);
+// }
+
 // 어플리케이션을 초기화하기
+// 클릭했을때 handleClick()함수 실행한다.
 function init() {
-  title.style.color = BASE_COLOR;
   title.addEventListener("click", handleClick);
 }
 // 함수 호출
 init();
-
-// 오프라인일때 출력
-function handleOffline() {
-  console.log("no wifi");
-}
-// 온라인일때 출력
-function handleOnline() {
-  console.log("Welcome back");
-}
-
-window.addEventListener("offline", handleOffline);
-window.addEventListener("online", handleOnline);
