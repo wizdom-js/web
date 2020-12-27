@@ -99,3 +99,18 @@ function handleResize(event) {
 // handleResize라고 적어야한다. 그래야 우리가 원하는 시간에 호출할 수 있음
 // handleResize()라고 적으면 지금 바로 호출하라는거임.
 window.addEventListener("resize", handleResize);
+
+// title을 클릭할때마다 제목 색깔을 빨간색으로 바꾸기
+function handleClick() {
+  title.style.color = "red";
+}
+
+//title은 click 이벤트를 기다리고 있게
+title.addEventListener("click", handleClick);
+
+// 조건문 만들기
+if (10 > 5) {
+  console.log("hi");
+} else {
+  console.log("ho");
+}

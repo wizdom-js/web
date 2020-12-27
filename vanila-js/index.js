@@ -1,9 +1,11 @@
-const title = document.querySelector("#title");
+//나이를 입력받고 술 마실 수 있는 나이인지 아닌지 출력하기
+// prompt 별로 안좋음.
+const age = prompt("How old are you");
 
-// title을 클릭할때마다 제목 색깔을 빨간색으로 바꾸기
-function handleClick() {
-  title.style.color = "red";
+if (age >= 18 && age <= 21) {
+  console.log("You can drink, but you shouldn't");
+} else if (age > 21) {
+  console.log("You can drink.");
+} else {
+  console.log("you can't drink.");
 }
-
-//title은 click 이벤트를 기다리고 있게
-title.addEventListener("click", handleClick);
