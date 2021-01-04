@@ -16,8 +16,11 @@ function handleSubmit(event) {
   saveName(currentValue);
 }
 
+//currentuser 없을때 user이름 요청
 function askForName() {
+  //what is your name? input칸 보여주기
   form.classList.add(SHOWING_CN);
+  //뭔가를 form에  submit하면 handlesubmit함수 실행
   form.addEventListener("submit", handleSubmit);
 }
 
