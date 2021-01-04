@@ -5,14 +5,17 @@ const form = document.querySelector(".js-form"),
 const USER_LS = "currentUser",
   SHOWING_CN = "showing";
 
+//이름 저장하기
 function saveName(text) {
   localStorage.setItem(USER_LS, text);
 }
 
 function handleSubmit(event) {
+  // 기본 동작 막기 (엔터 치면 새로고침 되는거)
   event.preventDefault();
   const currentValue = input.value;
   paintGreeting(currentValue);
+  // 이름 저장하기
   saveName(currentValue);
 }
 
@@ -27,7 +30,9 @@ function askForName() {
 function paintGreeting(text) {
   // 텍스트 색칠할거면 폼을 숨기자
   form.classList.remove(SHOWING_CN);
+  // greeting을 보여준다.
   greeting.classList.add(SHOWING_CN);
+  // 내가 보낸 텍스트 넣는다.
   greeting.innerText = `Hello ${text}`;
 }
 
