@@ -6,7 +6,24 @@ const TODOS_LS = "toDos";
 
 // 할 일을 여러개가 모인 목록으로 저장해야 하기 때문에 array 만들기
 // 할 일을 저장하면 이 toDos array에 저장되게
-const toDos = [];
+let toDos = [];
+
+// todo 지우기
+function deleteToDo(event) {
+  // 어떤 버튼인지 알기 위함. 부모(어떤 li인지)가 누구인지
+  const btn = event.target;
+  const li = btn.parentNode;
+  // 지워준 다.
+  toDoList.removeChild(li);
+  const cleanToDos = toDos.filter(function (toDo) {
+    // 모든 toDos가 li의 id와 같지 않을때
+    // li id는 string이었으므로 int로 바꾸어준다.
+    return toDo.id !== parseInt(li.id);
+  });
+  // toDos 교체
+  toDos = cleanToDos;
+  saveToDos();
+}
 
 // toDos array를 가져와서 로컬에 저장하는 일을 한다.
 function saveToDos() {
@@ -19,6 +36,7 @@ function paintToDo(text) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
   delBtn.innerHTML = "❌";
+  delBtn.addEventListener("click", deleteToDo);
   const span = document.createElement("span");
   // id 만들기 : array 길이 (몇개 투두 들어있는지)를 사용
   const newId = toDos.length + 1;
