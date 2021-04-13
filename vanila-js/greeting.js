@@ -33,7 +33,7 @@ function paintGreeting(text) {
   // greeting을 보여준다.
   greeting.classList.add(SHOWING_CN);
   // 내가 보낸 텍스트 넣는다.
-  greeting.innerText = `Hello ${text}`;
+  greeting.innerText = `Hello ${text} ~!`;
 }
 
 // 이름 불러오기

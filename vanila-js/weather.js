@@ -14,7 +14,7 @@ function getWeather(lat, lng) {
     .then(function (json) {
       const temperature = json.main.temp;
       const place = json.name;
-      weather.innerText = `${temperature} @ ${place}`;
+      weather.innerText = `현재 ${place}의 기온은 ${temperature}° 입니다.`;
     });
 }
 
