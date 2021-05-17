@@ -20,7 +20,7 @@ class MemoryMemberRepositoryTest {
     // 테스트가 끝날때마다 repository 지워주기
     @AfterEach
     public void afterEach() {
-
+        repository.clearStore();
     }
 
     @Test
