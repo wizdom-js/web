@@ -2,8 +2,24 @@ body {
   background-color: #2c3e50;
 }
 h1 {
-  color: #34495e;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 100px;
+  margin: 15px;
 }
+
+.js-clock,
+.string {
+  width: 30%;
+  text-align: center;
+  font-size: 20px;
+}
+
+input {
+  width: 50%;
+  height: 20px;
+}
+
 .btn {
   cursor: pointer;
 }
@@ -14,7 +30,32 @@ h1 {
 .form,
 .greetings {
   display: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
+.js-greetings {
+  font-size: 40px;
+  background-color: rgba(137, 119, 173, 0.5);
+}
+
+.js-toDoList {
+  text-align: left;
+}
+.js-toDoForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.js-toDoForm input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.todo-brackets {
+  font-size: 30px;
+}
+
 .showing {
   display: block;
 }
