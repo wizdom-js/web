@@ -28,7 +28,7 @@ class MemberServiceIntegrationTest {
         Member member = new Member();
         member.setName("spring");
 
-        //when 뭘 검증할거냐 !
+        //when 뭘 검증할거냐  !
         Long saveId = memberService.join(member);
 
         //then 검증하기
