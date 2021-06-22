@@ -100,7 +100,7 @@ public class RequestHeaderServlet extends HttpServlet {
     }
 
     // 기타 정보
-    // http 메세지 오는건 아니고 내부에서 네트워크 커넥션이 맺어진 정보들을 가지고 알 수 있는 정보
+    // http 메세지 오는건 아니고 내부에서 네트워크 커넥션이 맺어진 정보들을 가지고 알 수 있는 정
     private void printEtc(HttpServletRequest request) {
         System.out.println("--- 기타 조회 start ---");
 
