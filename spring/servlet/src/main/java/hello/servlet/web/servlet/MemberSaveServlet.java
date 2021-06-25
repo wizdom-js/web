@@ -18,7 +18,7 @@ public class MemberSaveServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 값을 가져와서 읽어야한다. httpformservlet에서 보냈던거
+        //  값을 가져와서 읽어야한다. httpformservlet에서 보냈던거
         System.out.println("MemberSaveServlet.service");
         String username = request.getParameter("username");
         // 나이를 꺼내는데 request.getparameter의 응답결과는 항상 문자이기 떄문에 int로 바꿔준다.
