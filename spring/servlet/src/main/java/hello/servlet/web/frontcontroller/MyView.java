@@ -18,7 +18,7 @@ public class MyView {
     // 일단 서블릿에 있는거 그대로 가지고 온다.
     public void render(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-        // dispatcher.foward 하면 자동으로 jsp가 렌더링
+        // dispatcher.forward 하면 자동으로 jsp가 렌더링
         dispatcher.forward(request, response);
     }
 
