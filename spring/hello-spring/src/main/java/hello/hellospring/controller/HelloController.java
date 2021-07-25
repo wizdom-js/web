@@ -6,13 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+@Controller // controller는 아래 어노테이션 붙여주기
 public class HelloController {
 
+    // @GetMapping에서 /hello라고 들어오면 이 메서드를 수행시킨다.
+    // (GetMapping의 get은 http의 get 메서드, post 메서드에서 그 get 임)
     @GetMapping("hello")
     public String hello(Model model) {
+        // addAttribute에 이름과 값을 넣어주면, resources> templates > hello.html의 ${data}에서
+        // data이름을 받았으니 hello!!라는 값을 반환한다.
         model.addAttribute("data", "hello!!");
-        return "hello";
+        return "hello"; // templates > hello.html 을 처리
     }
 
     @GetMapping("hello-mvc")
