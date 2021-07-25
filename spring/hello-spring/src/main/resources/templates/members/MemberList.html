@@ -10,7 +10,10 @@
                 <th>이름</th> </tr>
             </thead>
             <tbody>
+            <!--th:each 루프도는거(타임리프 문법).
+ 일케 루프 돌면서 $ 안에 있는 것은 모델 안에 있는 것을 꺼내와서 객체에 담고 id, name 쭉 출력 그다음 쭉 실행-->
             <tr th:each="member : ${members}">
+                <!-- property(getter setter)방식으로 접근해서 값을 가져와서 출력한다. -->
                 <td th:text="${member.id}"></td>
                 <td th:text="${member.name}"></td>
             </tr>
