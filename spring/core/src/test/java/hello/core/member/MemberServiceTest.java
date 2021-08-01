@@ -18,13 +18,16 @@ public class MemberServiceTest {
     @Test
     void join() {
         // given  이러이러한 환경이 주어졌을때
+        // 이런 vip사람을 만들었을 때
         Member member = new Member(1L, "memberA", Grade.VIP);
 
         // when 이렇게 됐을때
+        // memberservice에 가입하고 찾는다
         memberService.join(member);
         Member findMember = memberService.findMember(1L);
 
         // then 이렇게 된다 (검증)
+        // 똑같니 ?
         Assertions.assertThat(member).isEqualTo(findMember);
     }
 }

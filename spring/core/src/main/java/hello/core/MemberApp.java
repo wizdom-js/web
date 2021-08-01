@@ -12,6 +12,7 @@ public class MemberApp {
     public static void main(String[] args) {
 //        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = appConfig.memberService();
+        // 멤버 서비스 만들기
 //        MemberService memberService = new MemberServiceImpl();
 
         // 스프링 버전
@@ -23,11 +24,14 @@ public class MemberApp {
         // 꺼낼거 이름(메소드 이름 / 나는 이 객체를 찾을거야) , 반환타입
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 
+        // 회원 가입
         // Long 타입이기 떄문에 1L로 한다. 안붙이면 컴파일 오류남
-        Member member = new Member(1L, "memberA", Grade.VIP);
+        Member member = new Member(1L, "memberA", Grade.VIP); // 이사람 가입해본다.
         memberService.join(member);
 
+        // 멤버 찾기
         Member findMember = memberService.findMember(1L);
+        // 가입한 멤버와, 멤버 찾아서 비교해보기
         System.out.println("new member = " + member.getName() );
         System.out.println("find Member = " + findMember.getName());
 
