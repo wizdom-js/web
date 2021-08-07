@@ -10,10 +10,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MemberApp {
 
     public static void main(String[] args) {
-//        AppConfig appConfig = new AppConfig();
-//        MemberService memberService = appConfig.memberService();
+
         // 멤버 서비스 만들기
 //        MemberService memberService = new MemberServiceImpl();
+
+//         appconfig 버전
+//        AppConfig appConfig = new AppConfig();
+//        MemberService memberService = appConfig.memberService();
 
         // 스프링 버전
         // 스프링은 모든게 applicationcontext 부터 시작한다. 스프링 컨테이너임
@@ -31,7 +34,7 @@ public class MemberApp {
 
         // 멤버 찾기
         Member findMember = memberService.findMember(1L);
-        // 가입한 멤버와, 멤버 찾아서 비교해보기
+        // 가입한 멤버와,  멤버 찾아서 비교해보기
         System.out.println("new member = " + member.getName() );
         System.out.println("find Member = " + findMember.getName());
 

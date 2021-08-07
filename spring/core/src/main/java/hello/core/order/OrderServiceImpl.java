@@ -11,6 +11,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository; // 회원찾아야하니까
     private final DiscountPolicy discountPolicy; // 할인 해줘야하니까 필요
 
+    // 생성자
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

@@ -20,16 +20,19 @@ public class AppConfig {
     @Bean // 입력하면 귤색들이 스프링 컨테이너에 등록된다.
     // 생성자 주입 : 생성자를 통해서 객체가 new 인스턴스 생성된게 들어간다
     public MemberService memberService() {
+        // 1번
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
    public MemberRepository memberRepository() {
+
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
