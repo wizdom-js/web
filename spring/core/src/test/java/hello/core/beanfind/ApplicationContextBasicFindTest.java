@@ -38,10 +38,12 @@ public class ApplicationContextBasicFindTest {
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
-    @Test
+    @Test // 실패 테스트 케이스
     @DisplayName("빈 이름으로 조회X")
     void findBeanByNameX() {
 //        ac.getBean("xxxx", MemberService.class);
+        // junit의 Assertions.assertThorws
+        // 무조건 예외가 터져야 테스트가 성공하는 것
         assertThrows(NoSuchBeanDefinitionException.class,
                 () -> ac.getBean("xxxx", MemberService.class));
     }

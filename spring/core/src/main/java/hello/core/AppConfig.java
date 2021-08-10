@@ -24,7 +24,7 @@ public class AppConfig {
         return new MemberServiceImpl(memberRepository());
     }
 
-    @Bean
+    @Bean // method extract 이렇게 하면 메소드명을 보는 순간 역할이 다 드러난다. (장점)
    public MemberRepository memberRepository() {
 
         return new MemoryMemberRepository();

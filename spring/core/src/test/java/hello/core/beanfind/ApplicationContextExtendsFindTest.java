@@ -21,8 +21,9 @@ public class ApplicationContextExtendsFindTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
 
     @Test
-    @DisplayName("부모 타입으로 조회, 자식이 둘 이상 있으면, 중복 오류가 발생한다.")
+    @DisplayName("부모 타입으로 조회시, 자식이 둘 이상 있으면, 중복 오류가 발생한다.")
     void findBeRanByParentTypeDuplicate() {
+        // DiscountPolicy 타입이 2개이기 때문에 터짐 -> 성공
         assertThrows(NoUniqueBeanDefinitionException.class,
                 () -> ac.getBean(DiscountPolicy.class));
     }
@@ -64,7 +65,9 @@ public class ApplicationContextExtendsFindTest {
 
     @Configuration
     static class TestConfig {
-
+        // 여기서 DiscountPolicy를 RateDiscountPolicy라고 주어도 될텐데 왜 DiscountPolicy를 썼을까?
+        // Rate~ 써서 구체적으로 줘도 되지만, 역할과 구현을 쪼갠다고 생각해보자
+        // Discountpolicy를 쓰는 것이 낫다. 다른 곳에서 의존관계 주입할때도 DiscountPolicy 얘만 보면 되니까
         @Bean
         public DiscountPolicy rateDiscountPolicy() {
             return new RateDiscountPolicy();

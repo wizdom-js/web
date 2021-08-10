@@ -15,13 +15,14 @@ class ApplicationContextInfoTest {
     void findAllBean() {
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
+            // 타입 지정 안했으므로 object로 꺼내진다.
             Object bean = ac.getBean(beanDefinitionName);
             System.out.println("name = " + beanDefinitionName + " object = " + bean);
         }
     }
 
     @Test
-    @DisplayName("애플리케이션 빈 출력하기")
+    @DisplayName("애플리케이션 빈 출력하기") // 내가 등록한것만 !!
     void findApplicationBean() {
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
