@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    @Bean 하는 거랑 완전 같음 !! -->
+    <bean id="memberService" class="hello.core.member.MemberServiceImpl">
+        <!-- 생성자 넘겨주기-->
+        <constructor-arg name="memberRepository" ref="memberRepository"/>
+    </bean>
+
+<!--    위의 memberRepository 만들어주기 -->
+<!--    실제 구현 객체 : MemoryMemberRepository -->
+    <bean id="memberRepository" class="hello.core.member.MemoryMemberRepository" />
+
+<!--    서비스 -->
+    <bean id="orderService" class="hello.core.order.OrderServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository"/>
+        <constructor-arg name="discountPolicy" ref="discountPolicy" />
+    </bean>
+
+<!--    할인 정책 -->
+    <bean id="discountPolicy" class="hello.core.discount.RateDiscountPolicy" />
+
+</beans>
