@@ -27,8 +27,11 @@ public class OrderServiceImpl implements OrderService{
         // 할인 변경 필요하면 할인 그쪽만 고치면 되니까 orderservice 안고쳐도 된다 ! !
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
-
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
 
+    // 싱글톤 깨지는지 안깨지는지 테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
