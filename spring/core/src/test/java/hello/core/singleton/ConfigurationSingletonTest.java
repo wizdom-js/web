@@ -39,6 +39,7 @@ public class ConfigurationSingletonTest {
 
     @Test
     void configurationDeep() {
+        // 스프링 빈에 등록
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         AppConfig bean = ac.getBean(AppConfig.class);
 

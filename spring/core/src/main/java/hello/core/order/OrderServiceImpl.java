@@ -3,14 +3,18 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 // 주문 결과 반환해주는거
+@Component
 public class OrderServiceImpl implements OrderService{
 
     // final은 기본으로 할당하든 또는 생성자로 할당 해야함
     private final MemberRepository memberRepository; // 회원찾아야하니까
     private final DiscountPolicy discountPolicy; // 할인 해줘야하니까 필요
 
+    @Autowired
     // 생성자
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
