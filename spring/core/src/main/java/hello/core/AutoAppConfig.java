@@ -26,10 +26,12 @@ import org.springframework.context.annotation.FilterType;
 )
 public class AutoAppConfig {
 
+/*
     // 만약 수동 빈 등록과 자동 빈 등록에서 빈 이름이 충돌되면 어떻게 될까?
     @Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
+*/
 
 }

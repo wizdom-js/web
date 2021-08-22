@@ -10,16 +10,51 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService{
 
+    // ***** 1. 생성자 주입 *****
     // final은 기본으로 할당하든 또는 생성자로 할당 해야함
+    // private final -> 생성자에서 들어오는 것들은 무조건 값이 있어야 한다.
     private final MemberRepository memberRepository; // 회원찾아야하니까
     private final DiscountPolicy discountPolicy; // 할인 해줘야하니까 필요
 
+    // new OrderServiceImple(memberRepository, discountPolicy)
     @Autowired
     // 생성자
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+
+    // ***** 2. 수정자 주입 (setter 주입) *****
+//    private MemberRepository memberRepository;
+//    private DiscountPolicy discountPolicy;
+//
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+//        this.discountPolicy = discountPolicy;
+//    }
+//
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository) {
+//        this.memberRepository = memberRepository;
+//    }
+
+    // ***** 3. 필드 주입 *****
+    // 의존관계를 private이라도 바로 빡 넣어준다.
+//    @Autowired
+//    private MemberRepository memberRepository;
+//    @Autowired
+//    private DiscountPolicy discountPolicy;
+
+    // ***** 4. 일반 메서드 주입 *****
+    // 아무 메서드에나 대고 Autowired 붙일 수 있다 .
+//    private MemberRepository memberRepository;
+//    private DiscountPolicy discountPolicy;
+
+//    @Autowired
+//    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     // 주문생성 요청이오면 1. 회원 조회 2. 할인 정책에 회원 넘겨서 할인금액 받고
     // 3. 최종 생성된 주문을 반환한다.

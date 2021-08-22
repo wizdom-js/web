@@ -1,10 +1,8 @@
 package hello.core.order;
 
 import hello.core.AppConfig;
-import hello.core.member.Grade;
-import hello.core.member.Member;
-import hello.core.member.MemberService;
-import hello.core.member.MemberServiceImpl;
+import hello.core.discount.FixDiscountPolicy;
+import hello.core.member.*;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,4 +32,17 @@ public class OrderServiceTest {
         // 프린트로 검증 아니라 이걸로 ~ 그래야 편하게 테스트 만들 수 있다.
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+
+    // 필드 주입 테스트
+//    @Test
+//    void fieldInjectiontTest() {
+//        OrderServiceImpl orderService = new OrderServiceImpl();
+//
+//        // 각 setter 열어야 사용할 수 있음
+//        orderService.setMemberRepository(new MemoryMemberRepository());
+//        orderService.setDiscountPolicy(new FixDiscountPolicy());
+//
+//        orderService.createOrder(1L, "itemA", 10000);
+//    }
+
 }

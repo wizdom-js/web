@@ -50,6 +50,8 @@ public class AppConfig {
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
+        // 필드 주입 할 때 (돌려볼 때) 위의 return 주석 처리하고 밑의 return 풀어서 돌린다.
+//        return null;
     }
 
     @Bean
