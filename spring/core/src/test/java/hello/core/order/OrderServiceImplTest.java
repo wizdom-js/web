@@ -18,7 +18,10 @@ public class OrderServiceImplTest {
         memberRepository.save(new Member(1L, "name", Grade.VIP));
 
         // 수정자 메서드 사용하게 되면 createOrder만 테스트하고 싶어도 가짜 memorymemberrepository라도 넣어줘야한다.(임의의 dummy)
-        // 수정자 메서들르 두면 의존 관계가 안보인다.
+        // 수정자 메서드를 두면 의존 관계가 안보인다.
+        // 수정자 메서드를 사용한 실행 결과는 NPE(Null Point Exception)이 발생하는데,
+        // memberRepository, discountPolicy 모두 의존관계 주입이 누락되었기 때문이다.
+
         // 하지만 생성자 주입으로 주면 new OrderServiceImpl()에 컴파일 오류가 발생한다.
         // 그럼 바로 어떤 값이 들어가야 하는지 바로 인지할 수 있음 (임의의 값 또는 목 넣어줄 수 있다)
         OrderServiceImpl orderService = new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());

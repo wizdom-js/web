@@ -14,7 +14,7 @@ public class OrderServiceImpl implements OrderService{
     // final은 기본으로 할당하든 또는 생성자로 할당 해야함
     // private final -> 생성자에서 들어오는 것들은 무조건 값이 있어야 한다.
     // final -> 생성할 때 정해지면 안바뀐다. 장점: 생성자에서만 값을 세팅할 수 있다. 아니면 오른쪽에 초기 값을 넣어주거나. (나머지는 값을 바꿀 수 없다.)
-    // final 없으면 테스트를 실행시켜야 알 수 있는데, 있으면 컴파일 오류라고 바로 빨간줄로 알려준다. 
+    // final 없으면 테스트를 실행시켜야 알 수 있는데, 있으면 컴파일 오류라고 바로 빨간줄로 알려준다.
     private final MemberRepository memberRepository; // 회원찾아야하니까
     private final DiscountPolicy discountPolicy; // 할인 해줘야하니까 필요
 
@@ -30,6 +30,8 @@ public class OrderServiceImpl implements OrderService{
 //    private MemberRepository memberRepository;
 //    private DiscountPolicy discountPolicy;
 //
+    // @Autowired 가 프레임워크 안에서 동작할 때는 의존관계가 없으면 오류가 발생하지만,
+    // 지금은 프레임워크 없이 순수한 자바 코드로만 단위 테스트를 수행하고 있다.
 //    @Autowired
 //    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
 //        this.discountPolicy = discountPolicy;
